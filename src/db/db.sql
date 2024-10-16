@@ -5,7 +5,7 @@ CREATE TABLE usuario (
     nombres VARCHAR(60) NOT NULL,
     correo VARCHAR(60) NOT NULL UNIQUE,
     usuario VARCHAR(50) NOT NULL UNIQUE,
-    contrasenia VARCHAR(50) NOT NULL,
+    contrasenia VARCHAR(255) NOT NULL,
     nivel INT NOT NULL DEFAULT 0,
     tiempo_jugado INT NOT NULL DEFAULT 0,
     puntaje INT NOT NULL DEFAULT 0
