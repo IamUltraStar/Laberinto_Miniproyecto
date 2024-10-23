@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $type_error = checkErrors($conexion, $id_user, $nombres, $correo, $usuario, $password1, $password2);
 
         if ($type_error == '0') {
-            $hashed_password = password_hash($password1, PASSWORD_BCRYPT)
+            $hashed_password = password_hash($password1, PASSWORD_BCRYPT);
             $query = "UPDATE usuario SET nombres = ?, correo = ?, usuario = ?, contrasenia = ? WHERE id_usuario = ?";
             $stmt = $conexion->prepare($query);
             $stmt->bind_param("ssssi", $nombres, $correo, $usuario, $hashed_password, $id_user);
